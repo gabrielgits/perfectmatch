@@ -34,10 +34,10 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      initialRoute: '/',
+      initialRoute: '/home',
       routes: {
-        '/': (context) => const HomeView(),
-        '/register': (context) => const RegisterView(),
+        '/home': (context) => const HomeView(),
+        '/register': (context) => RegisterView(),
         '/match': (context) => const MatchView(),
         '/response': (context) => const ResponseView(),
         //home: MyHomePage(),

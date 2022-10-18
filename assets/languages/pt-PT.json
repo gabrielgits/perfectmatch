@@ -1,7 +1,7 @@
 {
-  "msg":"{} são escrito em {} linguagem",
-  "msg_named":"Easy localization is written in the {lang} language",
-  "msg_mixed":"{} are written in the {lang} language",
+  "buttonhomeopen" : "Abrir",
+  "buttonregister" : "Registar-se",
+
   "gender":{
     "male":"Hi man ;) {}",
     "female":"Hello girl :) {}",

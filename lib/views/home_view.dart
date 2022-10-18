@@ -8,9 +8,11 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: InkWell(
-          child: const Text('msg').tr(args: ['Chands', 'Bond']),
-          onTap: () => print(context.locale.toString()),
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/register');
+          },
+          child: const Text('buttonhomeopen').tr(),
         ),
       ),
     );

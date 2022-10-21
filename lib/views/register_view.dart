@@ -9,7 +9,8 @@ class RegisterView extends StatefulWidget {
 }
 
 class _RegisterViewState extends State<RegisterView> {
-  List<String> list = <String>['Male', 'Female'];
+  List<String> list = <String>[tr('ItemMale'), tr('ItemFemale')];
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -20,19 +21,22 @@ class _RegisterViewState extends State<RegisterView> {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              const TextField(
+              const SizedBox(
+                height: 50,
+              ),
+              TextField(
                 decoration: InputDecoration(
-                  labelText: "Name",
-                  border: OutlineInputBorder(
+                  labelText: 'LabelName'.tr(),
+                  border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8))),
-                  hintText: 'Enter a search term',
+                  hintText: tr('hintTextName'),
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
               DropdownButton<String>(
-                value: 'Male',
+                value: tr('ItemMale'),
                 icon: const Icon(Icons.arrow_downward),
                 elevation: 16,
                 style: const TextStyle(color: Colors.deepPurple),
@@ -56,9 +60,32 @@ class _RegisterViewState extends State<RegisterView> {
               const SizedBox(
                 height: 10,
               ),
+              Row(
+                children: [
+                  Checkbox(
+                    checkColor: Colors.white,
+                    //fillColor: MaterialStateProperty.resolveWith(getColor),
+                    value: isChecked,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        isChecked = value!;
+                      });
+                    },
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Text('textCheckBoxGender').tr(),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
               ElevatedButton(
-                onPressed: () {},
-                child: const Text('buttonregister').tr(),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/match');
+                },
+                child: Text(tr('buttonRegister')),
               ),
             ],
           ),

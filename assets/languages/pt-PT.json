@@ -1,6 +1,17 @@
 {
-  "buttonhomeopen" : "Abrir",
-  "buttonregister" : "Registar-se",
+  "buttonHomeOpen" : "Abrir",
+  "buttonRegister" : "Registar-se",
+  "buttonMatch" : "Calcular",
+  "ItemMale" : "Masculino",
+  "ItemFemale" : "Feminino",
+  "LabelName" : "Nome",
+  "hintTextName" : "Digite o seu nome",
+  "hintTextNamePartner" : "Digite o nome do/a parceiro/a",
+  "ResponseText" : "Resposta da Calculadora do Amor",
+  "textPartnerGender" : "Selecione o sexo do parceiro",
+  "buttonBackRegister" : "Mudar seu nome",
+  "buttonBackMatch" : "Tentar com outra pessoa",
+  "textCheckBoxGender" : "Guardar seus dados",
 
   "gender":{
     "male":"Hi man ;) {}",

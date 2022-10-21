@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
           onPressed: () {
             Navigator.pushNamed(context, '/register');
           },
-          child: const Text('buttonhomeopen').tr(),
+          child: Text(tr('buttonHomeOpen')),
         ),
       ),
     );

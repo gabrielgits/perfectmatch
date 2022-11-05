@@ -13,9 +13,9 @@
   "buttonBackMatch" : "Tentar com outra pessoa",
   "textCheckBoxGender" : "Guardar seus dados",
 
-  "gender":{
-    "male":"Hi man ;) {}",
-    "female":"Hello girl :) {}",
-    "other":"Hello {}"
+  "results":{
+    "category1":{
+      "pos1":"Meus parabens vocé não vai encotrar alguem melhores que o {}. Ele é perfeito pra ti, por favor não deixa esta oportunidade escapar."
+    }
   }
 }

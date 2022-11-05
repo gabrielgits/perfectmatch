@@ -1,20 +1,38 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:perfectmatch/controllers/controller_app.dart';
+import 'package:perfectmatch/models/person_model.dart';
+import 'package:provider/provider.dart';
 
 class RegisterView extends StatefulWidget {
-  RegisterView({Key? key}) : super(key: key);
+  const RegisterView({Key? key}) : super(key: key);
 
   @override
   State<RegisterView> createState() => _RegisterViewState();
 }
 
 class _RegisterViewState extends State<RegisterView> {
-  List<String> list = <String>[tr('ItemMale'), tr('ItemFemale')];
-  bool isChecked = false;
+  List<String> listGenres = <String>[tr('ItemMale'), tr('ItemFemale')];
+
+  late ControllerApp controllerApp;
+  PersonModel user = PersonModel.newObject();
+  TextEditingController usernameTEC = TextEditingController();
+  String genreValue = '';
+  bool saveUser = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    controllerApp = context.read<ControllerApp>();
+    user = controllerApp.getUser();
+    usernameTEC.text = user.name;
+    genreValue = listGenres[user.genre - 1];
+    saveUser = user.name != '';
+  }
 
   @override
   Widget build(BuildContext context) {
-    String dropdownValue = list.first;
     return Scaffold(
       body: Center(
         child: Padding(
@@ -25,6 +43,7 @@ class _RegisterViewState extends State<RegisterView> {
                 height: 50,
               ),
               TextField(
+                controller: usernameTEC,
                 decoration: InputDecoration(
                   labelText: 'LabelName'.tr(),
                   border: const OutlineInputBorder(
@@ -36,7 +55,7 @@ class _RegisterViewState extends State<RegisterView> {
                 height: 10,
               ),
               DropdownButton<String>(
-                value: tr('ItemMale'),
+                value: genreValue,
                 icon: const Icon(Icons.arrow_downward),
                 elevation: 16,
                 style: const TextStyle(color: Colors.deepPurple),
@@ -47,10 +66,10 @@ class _RegisterViewState extends State<RegisterView> {
                 onChanged: (String? value) {
                   // This is called when the user selects an item.
                   setState(() {
-                    dropdownValue = value!;
+                    genreValue = value!;
                   });
                 },
-                items: list.map<DropdownMenuItem<String>>((String value) {
+                items: listGenres.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(value),
@@ -65,10 +84,10 @@ class _RegisterViewState extends State<RegisterView> {
                   Checkbox(
                     checkColor: Colors.white,
                     //fillColor: MaterialStateProperty.resolveWith(getColor),
-                    value: isChecked,
+                    value: saveUser,
                     onChanged: (bool? value) {
                       setState(() {
-                        isChecked = value!;
+                        saveUser = value!;
                       });
                     },
                   ),
@@ -84,6 +103,12 @@ class _RegisterViewState extends State<RegisterView> {
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/match');
+                  controllerApp.registerUser(
+                      newUser: PersonModel(
+                        name: usernameTEC.text,
+                        genre: genreValue == tr('ItemMale') ? 1 : 2,
+                      ),
+                      save: saveUser);
                 },
                 child: Text(tr('buttonRegister')),
               ),

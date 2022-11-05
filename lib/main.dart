@@ -1,9 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:perfectmatch/controllers/controller_app.dart';
 import 'package:perfectmatch/views/home_view.dart';
 import 'package:perfectmatch/views/match_view.dart';
 import 'package:perfectmatch/views/register_view.dart';
 import 'package:perfectmatch/views/response_view.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,10 +13,13 @@ void main() async {
 
   runApp(
     EasyLocalization(
-        supportedLocales: const [Locale('en', 'US'), Locale('pt', 'PT')],
-        path: 'assets/languages', // <-- change the path of the translation files
-        fallbackLocale: const Locale('en', 'US'),
+      supportedLocales: const [Locale('en', 'US'), Locale('pt', 'PT')],
+      path: 'assets/languages', // <-- change the path of the translation files
+      fallbackLocale: const Locale('en', 'US'),
+      child: ChangeNotifierProvider(
+        create: (context) => ControllerApp(),
         child: const MyApp(),
+      ),
     ),
   );
 }

@@ -1,8 +1,8 @@
 class ResponseModel {
-  final int lineNumber;
+  final int posText;
   final int genre;
-  final int category;
+  final int posCategory;
 
   ResponseModel(
-      {required this.lineNumber, required this.genre, required this.category});
+      {required this.posText, required this.genre, required this.posCategory});
 }

@@ -21,21 +21,29 @@ class ControllerApp extends ChangeNotifier {
   }
 
   int _getPos(int pos, int max) {
-    int sum = _user.name.codeUnitAt(pos) + _partner.name.codeUnitAt(pos);
-    int i = 1;
-    while (sum >= max) {
-      sum = (sum / i).round();
-      i++;
+    int sumNames = (_user.name.hashCode + _partner.name.hashCode).abs() % max;
+
+    //while (sumNames > max) {
+    // sumNames = (sumNames / 2).round();
+    // }
+    if (sumNames < 1) {
+      sumNames = 1;
     }
-    return sum;
+    return sumNames;
   }
 
   String calculateNames() {
     ResponseModel response = ResponseModel(
       posText: _getPos(1, 10),
       genre: _partner.genre,
-      posCategory: _getPos(2, 5),
+      posCategory: _getPos(2, 3),
     );
-    return tr('results.category${response.posCategory}.pos${response.posText}');
+    return tr(
+      'results.category${response.posCategory}.pos${response.posText}',
+      namedArgs: {
+        'name': _partner.name,
+        'genre': _partner.genre == 1 ? 'o' : 'a',
+      },
+    );
   }
 }

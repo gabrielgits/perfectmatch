@@ -1,5 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../controllers/controller_app.dart';
+import '../models/person_model.dart';
 
 class MatchView extends StatefulWidget {
   const MatchView({Key? key}) : super(key: key);
@@ -9,10 +13,22 @@ class MatchView extends StatefulWidget {
 }
 
 class _MatchViewState extends State<MatchView> {
-  List<String> list = <String>[tr('ItemMale'), tr('ItemFemale')];
+  List<String> listGenres = <String>[tr('ItemMale'), tr('ItemFemale')];
+
+  late ControllerApp controllerApp;
+  PersonModel partner = PersonModel.newObject();
+  TextEditingController partnerNameTEC = TextEditingController();
+  String genreValue = '';
+
+  @override
+  void initState() {
+    super.initState();
+    controllerApp = context.read<ControllerApp>();
+    genreValue = listGenres[0];
+  }
+
   @override
   Widget build(BuildContext context) {
-    String dropdownValue = list.first;
     return Scaffold(
       body: Center(
         child: Padding(
@@ -23,6 +39,7 @@ class _MatchViewState extends State<MatchView> {
                 height: 50,
               ),
               TextField(
+                controller: partnerNameTEC,
                 decoration: InputDecoration(
                   labelText: 'LabelName'.tr(),
                   border: const OutlineInputBorder(
@@ -31,10 +48,9 @@ class _MatchViewState extends State<MatchView> {
                 ),
               ),
               const SizedBox(height: 10),
-              // ignore: prefer_const_constructors
-              Text('textPartnerGender').tr(),
+              Text(tr('textPartnerGender')),
               DropdownButton<String>(
-                value: tr('ItemMale'),
+                value: genreValue,
                 icon: const Icon(Icons.arrow_downward),
                 elevation: 16,
                 style: const TextStyle(color: Colors.deepPurple),
@@ -45,19 +61,27 @@ class _MatchViewState extends State<MatchView> {
                 onChanged: (String? value) {
                   // This is called when the user selects an item.
                   setState(() {
-                    dropdownValue = value!;
+                    genreValue = value!;
                   });
                 },
-                items: list.map<DropdownMenuItem<String>>((String value) {
+                items: listGenres.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(value),
                   );
                 }).toList(),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(
+                height: 10,
+              ),
               ElevatedButton(
                 onPressed: () {
+                  controllerApp.registerPartner(
+                    newPartner: PersonModel(
+                      name: partnerNameTEC.text,
+                      genre: genreValue == tr('ItemMale') ? 1 : 2,
+                    ),
+                  );
                   Navigator.pushNamed(context, '/response');
                 },
                 child: Text(tr('buttonMatch')),

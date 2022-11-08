@@ -102,13 +102,14 @@ class _RegisterViewState extends State<RegisterView> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/match');
                   controllerApp.registerUser(
-                      newUser: PersonModel(
-                        name: usernameTEC.text,
-                        genre: genreValue == tr('ItemMale') ? 1 : 2,
-                      ),
-                      save: saveUser);
+                    newUser: PersonModel(
+                      name: usernameTEC.text,
+                      genre: genreValue == tr('ItemMale') ? 1 : 2,
+                    ),
+                    save: saveUser,
+                  );
+                  Navigator.pushNamed(context, '/match');
                 },
                 child: Text(tr('buttonRegister')),
               ),

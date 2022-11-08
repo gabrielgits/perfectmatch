@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/home',
       routes: {
         '/home': (context) => const HomeView(),
-        '/register': (context) => RegisterView(),
+        '/register': (context) => const RegisterView(),
         '/match': (context) => const MatchView(),
         '/response': (context) => const ResponseView(),
         //home: MyHomePage(),

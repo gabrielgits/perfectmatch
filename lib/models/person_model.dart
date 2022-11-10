@@ -1,6 +1,6 @@
 class PersonModel {
-  final String name;
-  final int genre;
+  String name;
+  int genre;
 
   PersonModel({required this.name, required this.genre});
 

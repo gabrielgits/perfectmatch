@@ -21,11 +21,11 @@ class _RegisterViewState extends State<RegisterView> {
   bool saveUser = false;
 
   @override
-  void initState() {
+  Future<void> initState() async {
     super.initState();
 
     controllerApp = context.read<ControllerApp>();
-    user = controllerApp.getUser();
+    user = await controllerApp.getUser();
     usernameTEC.text = user.name;
     genreValue = listGenres[user.genre - 1];
     saveUser = user.name != '';

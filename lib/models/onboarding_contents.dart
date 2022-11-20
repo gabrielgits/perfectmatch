@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+
 class OnboardingContents {
   final String title;
   final String image;
@@ -12,20 +14,18 @@ class OnboardingContents {
 
 List<OnboardingContents> contents = [
   OnboardingContents(
-    title: "Track Your work and get the result",
+    title: tr('sliders.title1'),
     image: "assets/images/slider1.png",
-    desc: "Remember to keep track of your professional accomplishments.",
+    desc: tr('sliders.desc1'),
   ),
   OnboardingContents(
-    title: "Stay organized with team",
+    title: tr('sliders.title2'),
     image: "assets/images/slider2.png",
-    desc:
-        "But understanding the contributions our colleagues make to our teams and companies.",
+    desc: tr('sliders.desc2'),
   ),
   OnboardingContents(
-    title: "Get notified when work happens",
+    title: tr('sliders.title3'),
     image: "assets/images/slider3.png",
-    desc:
-        "Take control of notifications, collaborate live or on your own time.",
+    desc: tr('sliders.desc3'),
   ),
 ];

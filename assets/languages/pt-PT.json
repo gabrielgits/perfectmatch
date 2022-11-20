@@ -2,6 +2,9 @@
   "buttonHomeOpen" : "Abrir",
   "buttonRegister" : "Registar-se",
   "buttonMatch" : "Calcular",
+  "buttonStart" : "INICIAR",
+  "buttonSkip" : "PULAR",
+  "buttonNext" : "PRÓXIMO",
   "ItemMale" : "Masculino",
   "ItemFemale" : "Feminino",
   "LabelName" : "Nome",
@@ -50,5 +53,14 @@
       "pos9":"Serio, não tinha mais niguem para voce escolher é logo ja {genre} {name}. Vocé só deve estar a brincar comigo, termina logo enquanto é cedo.",
       "pos10":"Lagrimas, mentiras e traição, é isso que vai acontecer se voce e {genre} {name} ficarem juntos."
     }
+  },
+
+  "sliders":{
+    "title1":"title 1",
+    "desc1":"desc",
+    "title2":"title 2",
+    "desc2":"desc",
+    "title3":"title 3",
+    "desc3":"desc"
   }
 }

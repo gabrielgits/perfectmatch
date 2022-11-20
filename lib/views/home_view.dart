@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../models/onboarding_contents.dart';
@@ -130,7 +131,7 @@ class _HomeViewState extends State<HomeView> {
                               textStyle:
                                   TextStyle(fontSize: (width <= 550) ? 13 : 17),
                             ),
-                            child: const Text("START"),
+                            child: Text(tr('buttonStart')),
                           ),
                         )
                       : Padding(
@@ -149,9 +150,9 @@ class _HomeViewState extends State<HomeView> {
                                     fontSize: (width <= 550) ? 13 : 17,
                                   ),
                                 ),
-                                child: const Text(
-                                  "SKIP",
-                                  style: TextStyle(color: Colors.black),
+                                child: Text(
+                                  tr('buttonSkip'),
+                                  style: const TextStyle(color: Colors.black),
                                 ),
                               ),
                               ElevatedButton(
@@ -174,7 +175,7 @@ class _HomeViewState extends State<HomeView> {
                                   textStyle: TextStyle(
                                       fontSize: (width <= 550) ? 13 : 17),
                                 ),
-                                child: const Text("NEXT"),
+                                child: Text(tr('buttonNext')),
                               ),
                             ],
                           ),

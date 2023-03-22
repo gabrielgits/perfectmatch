@@ -14,7 +14,7 @@ class RegisterView extends StatefulWidget {
 class _RegisterViewState extends State<RegisterView> {
   List<String> listGenres = <String>[tr('ItemMale'), tr('ItemFemale')];
 
-  late ControllerApp controllerApp;
+  //late ControllerApp controllerApp;
   PersonModel user = PersonModel.newObject();
   TextEditingController usernameTEC = TextEditingController();
   String genreValue = '';
@@ -24,8 +24,6 @@ class _RegisterViewState extends State<RegisterView> {
   Future<void> initState() async {
     super.initState();
 
-    controllerApp = context.read<ControllerApp>();
-    user = await controllerApp.getUser();
     usernameTEC.text = user.name;
     genreValue = listGenres[user.genre - 1];
     saveUser = user.name != '';
@@ -33,6 +31,7 @@ class _RegisterViewState extends State<RegisterView> {
 
   @override
   Widget build(BuildContext context) {
+    final controllerApp = context.read<ControllerApp>();
     return Scaffold(
       body: Center(
         child: Padding(

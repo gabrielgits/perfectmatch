@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../models/onboarding_contents.dart';
+import '../models/slider_contents.dart';
 import '../models/size_config.dart';
 
 class HomeView extends StatefulWidget {

@@ -21,9 +21,8 @@ class _RegisterViewState extends State<RegisterView> {
   bool saveUser = false;
 
   @override
-  Future<void> initState() async {
+  void initState() {
     super.initState();
-
     usernameTEC.text = user.name;
     genreValue = listGenres[user.genre - 1];
     saveUser = user.name != '';

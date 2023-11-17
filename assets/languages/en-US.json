@@ -18,40 +18,40 @@
 
   "results":{
     "category1":{
-      "pos1":"Congratulations, you didn't find anyone better than {genre}, {name}. {genre} is perfect for you, please don't let this chance escape.",
+      "pos1":"Congratulations, you didn't find anyone better than {name}. {genre} is perfect for you, please don't let this chance escape.",
       "pos2":"My God... Person like {name}, with you, you will find someone once in life. Give everything to this relationship, I guarantee, you won't regret.",
       "pos3":"{name}... {name}... {name}... Only by name, I know that it's for you. Where are you waiting for...",
-      "pos4":"Namoro perfeito, casamento garantido. {name} nasceu para ti.",
-      "pos5":"{name} e perfeição andam juntos. Estas de parabens.",
-      "pos6":"Além de bonit{genre} e inteligente {genre} {name} ira te fazer muito feliz.",
-      "pos7":"Uau onde vocé encotrou o {genre} {name}? Porque concerteza é um anjo. Esta certo na sua decisão.",
-      "pos8":"Por favor, não espere mais, liga agora mesmo n{genre} {name} e diz que {genre} amas.",
-      "pos9":"Serio, tu estas fazendo que metendo o nome d{genre} {name} aqui. Vocé ja não viu que nasceram um para outro.",
-      "pos10":"Voces formam um lindo casal, tens a minha aprovação. Garanto que não iras se arrepender."
+      "pos4":"Perfet parther, marriage guaranteed. {name} was born for you.",
+      "pos5":"{name} and perfectness are together. Congratulations.",
+      "pos6":"Besides cute and intelligent, {name} will make you happy.",
+      "pos7":"Own when you meet {name}? Because certainty is an angel. You are right in your decision.",
+      "pos8":"Please, don't wait, link now! I promise, you won't regret.",
+      "pos9":"Seriously, why did you still have doubts about {name}? You are born for each other.",
+      "pos10":"You make a perfect couple. I guarantee you won't regret."
     },
     "category2":{
-      "pos1":"Ta... gostei, mas algo me diz que vocé deve ir com calma. Nunca se sabe não é...",
-      "pos2":"Parece que {genre} {name} é uma pessoa boa, mais você só ja sabes como a vida é, vamos ver no que dá.",
-      "pos3":"Vocé esta gostando d{genre} {name}? Esta ficando serio? humm... vai com calma, por favor, vai com calma.",
-      "pos4":"Ja ligou para {genre} {name} hoje. Liga... porque parece uma boa escolha.",
-      "pos5":"Cuidado com seu coração.",
-      "pos6":"Podes namorar com {genre} {name}, se divertir, mas não coloca seu coração, vocé pode se machuca.r",
-      "pos7":"Estou torcendo para que {genre} {name} seja a pessoa perfeita para ti, mas algo me diz que tens que ir com calma.",
-      "pos8":"Calma, muita calma nesta hora. Sei que estas gostas d{genre} {name}, mas vai calma por favor.",
-      "pos9":"Tu fez uma boa escolha, mas não a escolha perfeita, portanto voce sabe o que deve fazer não é?",
-      "pos10":"Voces formam um lindo casal, mas não tenho 100% de certeza. {name} pode te dar momentos felizes mas tambem triste, vamos ver ok..."
+      "pos1":"Ok... {name} is a good person, but you know how it's going to be. Let's see what happens.",
+      "pos2":"Looks like {genre} {name} is a good person. This is going well. Let's see what happens.",
+      "pos3": "Do you like {genre} {name}? It's going seriously. Hum, take it easy, please. Take it easy.",
+      "pos4":"Do you call {name} today? Call {genre} {name} today.",
+      "pos5":"be careful with your heart.",
+      "pos6":"Ok... {name} is a good person, but you know how it's going to be. Let's see what happens.",
+      "pos7":"Looks like {genre} {name} is a good person. This is going well. Let's see what happens.",
+      "pos8": "Do you like {genre} {name}? It's going seriously. Hum, take it easy, please. Take it easy.",
+      "pos9":"Do you call {name} today? Call {genre} {name} today.",
+      "pos10":"be careful with your heart."
     },
     "category3":{
-      "pos1":"Queres um conselho... Foge agora...",
-      "pos2":"Ok, {genre} garot{genre} não serve pra ti. Voce pode econtrar alguém melhor.",
-      "pos3":"{name}... {name}... {name}... Só pelo nome ja sei que é problema para ti. Foge agora...",
-      "pos4":"Olha voces não combinam, se voce quer ir em frente estas por sua conta e risco. Mas não recomendo.",
-      "pos5":"{name} é sinónimo de problema para ti.",
-      "pos6":"Mesmo {genre} {name} parecendo bonit{genre} e inteligente, {name} ira te fazer sofrer muito.",
-      "pos7":"Não se encanta com essa carinha de anjo. É um demonio disfarçado. Foge...",
-      "pos8":"Por favor, não estraga sua vida, sai dessa agora mesmo, o que {genre} {name} quer, não é o que voce quer.",
-      "pos9":"Serio, não tinha mais niguem para voce escolher é logo ja {genre} {name}. Vocé só deve estar a brincar comigo, termina logo enquanto é cedo.",
-      "pos10":"Lagrimas, mentiras e traição, é isso que vai acontecer se voce e {genre} {name} ficarem juntos."
+      "pos1":"You want advice... Run now...",
+      "pos2":"Ok, {name} doesn't serve you. You can find someone better.",
+      "pos3":"{name}... {name}... {name}... Just by name, I know that it's not for you. Run now...",
+      "pos4":"Look at you're not compatible, if you want go ahead. But don't recommend.",
+      "pos5":"{name} is troubled for you.",
+      "pos6":"Even {name} seems to be friendly, cutely, and intelligent, {name} will never make you happy.",
+      "pos7":"Don't be fooled by that little angel face. It's an evil demon. Run...",
+      "pos8":"Please, don't spend your life, go another way, what {name} wants, it's not what you want.",
+      "pos9":"Are you sure about that? It's better to be alone. End while is soon.",
+      "pos10":"You will suffer, if you try to go forward. I don't recommend."
     }
   },
 

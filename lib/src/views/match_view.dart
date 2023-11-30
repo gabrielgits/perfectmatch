@@ -1,12 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../controllers/controller_app.dart';
 import '../models/person_model.dart';
 
 class MatchView extends StatefulWidget {
-  const MatchView({Key? key}) : super(key: key);
+  const MatchView({super.key});
 
   @override
   State<MatchView> createState() => _MatchViewState();

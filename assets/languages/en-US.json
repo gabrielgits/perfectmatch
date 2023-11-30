@@ -1,4 +1,6 @@
 {
+  "she": "She",
+  "he": "He",
   "buttonHomeOpen" : "Open",
   "buttonRegister" : "Sign up",
   "buttonMatch" : "Matche the Names",
@@ -57,10 +59,10 @@
 
   "sliders":{
     "title1":"Name Compatibility",
-    "desc1":"PerfectMatch uses an intricate algorithm that analyzes the compatibility of names.",
+    "text1":"PerfectMatch uses an intricate algorithm that analyzes the compatibility of names.",
     "title2":"Profile Creation",
-    "desc2":"This helps in finding matches beyond just name compatibility.",
+    "text2":"This helps in finding matches beyond just name compatibility.",
     "title3":"Interactive Interface",
-    "desc3":"User-friendly and visually appealing interface, making it easy to use."
+    "text3":"User-friendly and visually appealing interface, making it easy to use."
   }
 }

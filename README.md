@@ -14,7 +14,6 @@ This APP has the following dependencies:
 
 - [easy_localization: for internationalization](https://pub.dev/packages/easy_localization)
 - [shared_preferences: for save local data](https://pub.dev/packages/shared_preferences)
-- [provider: for state-management](https://pub.dev/packages/provider)
 
 
 ## Getting Started with Flutter

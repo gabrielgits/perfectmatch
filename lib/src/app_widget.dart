@@ -1,25 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:perfectmatch/src/controllers/controller_user.dart';
+import 'package:perfectmatch/src/views/home_view.dart';
 
-import 'constants.dart';
-import 'routes.dart';
+import 'views/landing_view.dart';
 
-class AppWidget extends StatelessWidget {
+class AppWidget extends ConsumerWidget {
   const AppWidget({super.key});
-  final String title = App.name;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final controller = ref.watch(controllerUserProvider);
+
     return MaterialApp(
-      title: title,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorSchemeSeed: Colors.blue,
+        useMaterial3: true,
       ),
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      initialRoute: Routes.initialRoute,
-      routes: Routes.routes,
+      home: controller.when(
+        loading: () => const Scaffold(
+          body: Center(child: CircularProgressIndicator()),
+        ),
+        error: (error, stackTrace) => LandingView(
+          started: () async {
+            ref.read(controllerUserProvider.notifier).userAnonymously();
+          },
+        ),
+        data: (user) {
+          return HomeView(user: user);
+        },
+      ),
     );
   }
 }

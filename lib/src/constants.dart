@@ -12,6 +12,5 @@ class App {
   //url
 
   // keys
-  static const keyPerson = 'pmPerson';
-  static const keyGenre = 'pmGenre';
+  static const keyUser = 'pmUser';
 }

@@ -7,19 +7,12 @@ import '../models/response_model.dart';
 class ControllerApp extends Notifier<String> {
   @override
   String build() {
-    return '';
+    return reset();
   }
 
-  int _getPos({
-    required int max,
-    required String userName,
-    required partnerName,
-  }) {
-    int sumNames = (userName.hashCode + partnerName.hashCode).abs() % max;
-    if (sumNames < 1) {
-      sumNames = 1;
-    }
-    return sumNames;
+  String reset() {
+    state = '';
+    return '';
   }
 
   String calculateNames({
@@ -32,13 +25,27 @@ class ControllerApp extends Notifier<String> {
       posCategory:
           _getPos(max: 3, userName: user.name, partnerName: partner.name),
     );
-    return tr(
+    final result = tr(
       'results.category${response.posCategory}.pos${response.posText}',
       namedArgs: {
         'name': partner.name,
         'genre': partner.genre == 'male' ? tr('he') : tr('she'),
       },
     );
+    state = result;
+    return result;
+  }
+
+  int _getPos({
+    required int max,
+    required String userName,
+    required partnerName,
+  }) {
+    int sumNames = (userName.hashCode + partnerName.hashCode).abs() % max;
+    if (sumNames < 1) {
+      sumNames = 1;
+    }
+    return sumNames;
   }
 }
 

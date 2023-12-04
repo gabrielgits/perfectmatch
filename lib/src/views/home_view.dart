@@ -1,33 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:perfectmatch/src/controllers/controller_user.dart';
 
-import 'landing_view.dart';
+import '../constants.dart';
+import '../models/person_model.dart';
+import 'register_view.dart';
 
-class HomeView extends ConsumerWidget {
-  const HomeView({super.key});
+class HomeView extends StatelessWidget {
+  const HomeView({super.key, required this.user});
+  final PersonModel user;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final controller = ref.watch(controllerUserProvider);
-
-    return controller.when(
-      loading: () => const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(title: const Text(App.name)),
+        body: TabBarView(
+          children: [
+            RegisterView(user: user),
+            const Icon(Icons.settings),
+          ],
+        ),
+        bottomNavigationBar: const TabBar(
+          tabs: [
+            Tab(icon: Icon(Icons.gamepad)),
+            Tab(icon: Icon(Icons.settings)),
+          ],
+        ),
       ),
-      error: (error, stackTrace) => LandingView(
-        started: () async {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => const HomeWidget()),
-          );
-        },
-      ),
-      data: (user) {
-        if (user.id == 0) {
-          return const HomeWidget();
-        }
-        return HomeWidget(user: user);
-      },
     );
   }
 }

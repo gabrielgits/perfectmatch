@@ -15,7 +15,7 @@ class ControllerApp extends Notifier<String> {
     return '';
   }
 
-  String calculateNames({
+  void calculateNames({
     required PersonModel user,
     required PersonModel partner,
   }) {
@@ -33,7 +33,6 @@ class ControllerApp extends Notifier<String> {
       },
     );
     state = result;
-    return result;
   }
 
   int _getPos({

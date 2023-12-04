@@ -9,12 +9,12 @@ void main() async {
   await EasyLocalization.ensureInitialized();
 
   runApp(
-    EasyLocalization(
-      supportedLocales: const [Locale('en', 'US'), Locale('pt', 'PT')],
-      path: 'assets/languages',
-      fallbackLocale: const Locale('en', 'US'),
-      child: const ProviderScope(
-        child: AppWidget(),
+    ProviderScope(
+      child: EasyLocalization(
+        supportedLocales: const [Locale('en', 'US'), Locale('pt', 'PT')],
+        path: 'assets/languages',
+        fallbackLocale: const Locale('en', 'US'),
+        child: const AppWidget(),
       ),
     ),
   );

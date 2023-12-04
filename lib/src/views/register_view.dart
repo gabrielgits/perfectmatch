@@ -12,10 +12,10 @@ class RegisterView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    List<String> listGenres = <String>[tr('itemMale'), tr('itemFemale')];
+    final listGenres = [tr('itemMale'), tr('itemFemale')];
 
     TextEditingController usernameTEC = TextEditingController(text: user.name);
-    String genreValue = user.genre;
+    String genreValue = listGenres.first;
     bool saveUser = false;
 
     return Scaffold(
@@ -60,7 +60,7 @@ class RegisterView extends ConsumerWidget {
                   const SizedBox(
                     width: 10,
                   ),
-                  const Text('textCheckBoxGender').tr(),
+                  Text(tr('textCheckBoxGender')),
                 ],
               ),
               const SizedBox(

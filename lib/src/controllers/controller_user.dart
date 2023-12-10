@@ -9,15 +9,16 @@ import '../models/person_model.dart';
 class ControllerUser extends AutoDisposeAsyncNotifier<PersonModel> {
   @override
   Future<PersonModel> build() async {
-    return const PersonModel(name: 'Anonymous', genre: 'Male');
+    return getUser();
   }
 
-  Future<void> getUser() async {
+  Future<PersonModel> getUser() async {
     state = const AsyncValue.loading();
     final data = await SharedPreferences.getInstance();
     final userData = data.getString(App.keyUser);
     final user = PersonModel.fromJson(jsonDecode(userData!));
     state = AsyncValue.data(user);
+    return user;
   }
 
   Future<void> registerUser({

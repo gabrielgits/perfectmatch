@@ -57,7 +57,8 @@
     }
   },
 
-  "sliders":{
+  "landing":{
+    "btnStart":"Start",
     "title1":"Name Compatibility",
     "text1":"PerfectMatch uses an intricate algorithm that analyzes the compatibility of names.",
     "title2":"Profile Creation",

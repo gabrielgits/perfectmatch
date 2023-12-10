@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:perfectmatch/src/controllers/controller_user.dart';
@@ -13,6 +14,9 @@ class AppWidget extends ConsumerWidget {
     final controller = ref.watch(controllerUserProvider);
 
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       theme: ThemeData(
         colorSchemeSeed: Colors.blue,
         useMaterial3: true,

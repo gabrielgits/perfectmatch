@@ -18,7 +18,7 @@ class LandingView extends StatelessWidget {
               height: 500.0,
               autoPlay: true,
             ),
-            items: [1, 2, 3, 4].map((i) {
+            items: [1, 2, 3].map((i) {
               return Builder(
                 builder: (BuildContext context) {
                   return _slideItem(

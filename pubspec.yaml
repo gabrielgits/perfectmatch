@@ -1,6 +1,6 @@
 name: perfectmatch
 description: Matches your name and that of your partner to see if they match
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
 version: 0.1.0
 
@@ -11,11 +11,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+  freezed_annotation: ^2.4.1
   easy_localization: ^3.0.3
   upgrader: ^8.3.0
   flutter_riverpod: ^2.4.8
   carousel_slider: ^4.2.1
   shared_preferences: ^2.2.2
+  bform: ^0.3.6
 
 dev_dependencies:
   flutter_test:
@@ -34,4 +36,5 @@ flutter:
   assets:
     - assets/languages/
     - assets/images/landing/
+    - assets/images/icons/
   #   - images/a_dot_ham.jpeg

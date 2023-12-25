@@ -1,10 +1,11 @@
+import 'package:bform/bform.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../controllers/controller_user.dart';
+import '../controllers/lists.dart';
 import '../models/person_model.dart';
-import 'widgets/select_widget.dart';
 
 class RegisterView extends ConsumerWidget {
   const RegisterView({required this.user, super.key});
@@ -12,74 +13,71 @@ class RegisterView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final listGenres = [tr('itemMale'), tr('itemFemale')];
-
     TextEditingController usernameTEC = TextEditingController(text: user.name);
-    String genreValue = listGenres.first;
+    Genre genreValue = listGenres.first;
     bool saveUser = false;
 
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 50,
-              ),
-              TextField(
-                controller: usernameTEC,
-                decoration: InputDecoration(
-                  labelText: tr('labelName'),
-                  border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(8))),
-                  hintText: tr('hintTextName'),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              tr('registerInfo'),
+              style: const TextStyle(fontSize: 16),
+            ),
+            Column(
+              children: [
+                BformTextInput(
+                  controller: usernameTEC,
+                  label: tr('labelName'),
+                  icon: const Icon(Icons.person),
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              SelectWidget(
-                value: genreValue,
-                list: listGenres,
-                onChanged: (value) => genreValue = value,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Checkbox(
-                    checkColor: Colors.white,
-                    //fillColor: MaterialStateProperty.resolveWith(getColor),
-                    value: saveUser,
-                    onChanged: (bool? value) {
-                      saveUser = value!;
-                    },
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(tr('textCheckBoxGender')),
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  ref.read(controllerUserProvider.notifier).registerUser(
-                        newUser: PersonModel(
-                          name: usernameTEC.text,
-                          genre: genreValue,
-                        ),
-                        save: saveUser,
-                      );
-                },
-                child: Text(tr('buttonRegister')),
-              ),
-            ],
-          ),
+                const SizedBox(
+                  height: 20,
+                ),
+                BformGroupRadio(
+                  label: tr('labelGenre'),
+                  item: genreValue,
+                  listItems: listGenres,
+                  onChange: (value) => genreValue = listGenres[value.id],
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                BformCheckbox(
+                  label: tr('textCheckBoxGender'),
+                  //fillColor: MaterialStateProperty.resolveWith(getColor),
+                  inicialState: saveUser,
+                  onChange: (value) {
+                    saveUser = value;
+                  },
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                BformButton(
+                  onPressed: () {
+                    ref.read(controllerUserProvider.notifier).registerUser(
+                          newUser: PersonModel(
+                            name: usernameTEC.text,
+                            genre: genreValue.title,
+                          ),
+                          save: saveUser,
+                        );
+                  },
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  style: BformButtonStyle.highlighted,
+                  textColor: Colors.white,
+                  colors: const [Colors.blue, Colors.purple],
+                  label: tr('buttonRegister'),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

@@ -10,6 +10,7 @@
   "itemMale" : "Male",
   "itemFemale" : "Female",
   "labelName" : "Name",
+  "labelGenre" : "What is your Genre?",
   "hintTextName" : "Enter your name",
   "hintTextNamePartner" : "Enter the name of your partner",
   "ResponseText" : "Ansewer of the Calculator of Love",
@@ -17,6 +18,7 @@
   "buttonBackRegister" : "Change your name",
   "buttonBackMatch" : "Try with another person",
   "textCheckBoxGender" : "Save your information",
+  "registerInfo" : "Please insert your information first",
 
   "results":{
     "category1":{
